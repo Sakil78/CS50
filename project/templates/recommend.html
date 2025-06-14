@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %} | Recommend{% endblock %}
+
+{% block main %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+    <div class="card shadow-lg p-4 w-100" style="max-width: 420px; border-radius: 1.5rem;">
+        <div class="text-center mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#eb3b5a" viewBox="0 0 24 24"><path d="M21 3H3a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H4V5h16v14zm-8-2a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-8a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+            <h2 class="fw-bold mt-2">How are you feeling?</h2>
+            <p class="text-muted mb-0">Select your mood to get the perfect movie recommendation!</p>
+        </div>
+        <form action="/recommend" method="post">
+            <div class="mb-4">
+                <div class="btn-group w-100" role="group" aria-label="Mood selection">
+                    <input type="radio" class="btn-check" name="mood" id="happy" value="happy" autocomplete="off" required>
+                    <label class="btn btn-outline-success" for="happy">😊 Happy</label>
+                    <input type="radio" class="btn-check" name="mood" id="nostalgic" value="nostalgic" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="nostalgic">📼 Nostalgic</label>
+                    <input type="radio" class="btn-check" name="mood" id="adventurous" value="adventurous" autocomplete="off">
+                    <label class="btn btn-outline-warning" for="adventurous">🏔️ Adventurous</label>
+                    <input type="radio" class="btn-check" name="mood" id="sad" value="sad" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="sad">😢 Sad</label>
+                </div>
+            </div>
+            <button class="btn btn-warning w-100 fw-bold" type="submit">Recommend a Movie</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

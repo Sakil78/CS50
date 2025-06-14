@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>My Recommendation History</h2>
+    {% if history %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Mood</th>
+                    <th>When</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in history %}
+                <tr>
+                    <td><a href="{{ entry.imdb_url }}" target="_blank">{{ entry.title }}</a></td>
+                    <td>{{ entry.mood|capitalize }}</td>
+                    <td>{{ entry.when_searched }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No history yet.</p>
+    {% endif %}
+{% endblock %}
