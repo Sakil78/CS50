@@ -37,7 +37,7 @@ A web application where users can register, log in, pick their mood, and get mov
    ```
 4. **Initialize the database**
    ```powershell
-   sqlite3 movies.db < init_db.sql
+   .\sqlite3.exe project.db ".read init_db.sql"
    ```
 5. **Run the application**
    ```powershell
